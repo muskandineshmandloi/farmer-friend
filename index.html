@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Friend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌾 Farmer Friend</h1>
+        <p>Empowering Agronomists with Data-Driven Insights</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" onclick="showSection('crop-selection')">Crop Selection</button>
+        <button class="nav-btn" onclick="showSection('yield-predictor')">Yield Predictor</button>
+        <button class="nav-btn" onclick="showSection('pest-identifier')">Pest/Disease Identifier</button>
+        <button class="nav-btn" onclick="showSection('soil-analysis')">Soil Analysis</button>
+        <button class="nav-btn" onclick="showSection('climate-adaptation')">Climate Adaptation</button>
+        <button class="nav-btn" onclick="showSection('sustainable-practices')">Sustainable Practices</button>
+    </nav>
+
+    <main>
+        <section id="crop-selection" class="section active">
+            <h2>Crop Selection</h2>
+            <select id="crop-select">
+                <option value="">Select a crop variety</option>
+                <option value="wheat">Wheat - Variety A</option>
+                <option value="corn">Corn - Variety B</option>
+                <option value="rice">Rice - Variety C</option>
+                <option value="soybean">Soybean - Variety D</option>
+                <option value="barley">Barley - Variety E</option>
+                <option value="oats">Oats - Variety F</option>
+                <option value="potato">Potato - Variety G</option>
+                <option value="tomato">Tomato - Variety H</option>
+                <option value="lettuce">Lettuce - Variety I</option>
+                <option value="carrot">Carrot - Variety J</option>
+                <!-- Add more options up to 500+ -->
+            </select>
+            <div id="crop-info"></div>
+        </section>
+
+        <section id="yield-predictor" class="section">
+            <h2>Yield Predictor</h2>
+            <form id="yield-form">
+                <label for="soil-type">Soil Type:</label>
+                <select id="soil-type">
+                    <option value="clay">Clay</option>
+                    <option value="sandy">Sandy</option>
+                    <option value="loamy">Loamy</option>
+                </select>
+                
+                <label for="weather">Weather Pattern:</label>
+                <select id="weather">
+                    <option value="rainy">Rainy</option>
+                    <option value="dry">Dry</option>
+                    <option value="temperate">Temperate</option>
+                </select>
+                
+                <label for="area">Area (hectares):</label>
+                <input type="number" id="area" min="0.1" step="0.1">
+                
+                <button type="submit">Predict Yield</button>
+            </form>
+            <div id="yield-result"></div>
+        </section>
+
+        <section id="pest-identifier" class="section">
+            <h2>Pest/Disease Identifier</h2>
+            <input type="file" id="pest-image" accept="image/*">
+            <textarea id="symptoms" placeholder="Describe symptoms..."></textarea>
+            <button onclick="identifyPest()">Identify</button>
+            <div id="pest-result"></div>
+        </section>
+
+        <section id="soil-analysis" class="section">
+            <h2>Soil Analysis</h2>
+            <label for="ph">pH Level:</label>
+            <input type="number" id="ph" min="0" max="14" step="0.1">
+            
+            <label for="nitrogen">Nitrogen (%):</label>
+            <input type="number" id="nitrogen" min="0" step="0.01">
+            
+            <label for="phosphorus">Phosphorus (%):</label>
+            <input type="number" id="phosphorus" min="0" step="0.01">
+            
+            <label for="potassium">Potassium (%):</label>
+            <input type="number" id="potassium" min="0" step="0.01">
+            
+            <button onclick="analyzeSoil()">Analyze Soil</button>
+            <div id="soil-result"></div>
+        </section>
+
+        <section id="climate-adaptation" class="section">
+            <h2>Climate Adaptation</h2>
+            <label for="temperature">Average Temperature (°C):</label>
+            <input type="number" id="temperature">
+            
+            <label for="rainfall">Annual Rainfall (mm):</label>
+            <input type="number" id="rainfall">
+            
+            <button onclick="suggestCrops()">Suggest Crops</button>
+            <div id="climate-suggestions"></div>
+        </section>
+
+        <section id="sustainable-practices" class="section">
+            <h2>Sustainable Practices</h2>
+            <div class="practice-cards">
+                <div class="card">
+                    <h3>Crop Rotation</h3>
+                    <p>Rotate crops to maintain soil fertility and reduce pest pressure.</p>
+                </div>
+                <div class="card">
+                    <h3>Organic Fertilizers</h3>
+                    <p>Use compost and manure to enrich soil naturally.</p>
+                </div>
+                <div class="card">
+                    <h3>Water Conservation</h3>
+                    <p>Implement drip irrigation to save water and improve efficiency.</p>
+                </div>
+                <div class="card">
+                    <h3>Integrated Pest Management</h3>
+                    <p>Combine biological, cultural, and chemical methods for pest control.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
